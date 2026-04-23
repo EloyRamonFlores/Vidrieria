@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
+import TopBar from '../components/TopBar'
 import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
+import HeroCRO from '../components/HeroCRO'
+import BenefitsCRO from '../components/BenefitsCRO'
 import Gallery from '../components/Gallery'
 import GoogleMap from '../components/GoogleMap'
 import Footer from '../components/Footer'
@@ -30,9 +32,11 @@ export default function HomePage() {
         Saltar al contenido principal
       </a>
 
+      <TopBar />
       <Navbar />
       <main id="main-content">
-        <Hero />
+        <HeroCRO />
+        <BenefitsCRO />
         <Gallery limit={6} />
         <GoogleMap />
       </main>

@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
+import TopBar from '../components/TopBar'
 import Navbar from '../components/Navbar'
 import Gallery from '../components/Gallery'
-import Services from '../components/Services'
+import ServicesCRO from '../components/ServicesCRO'
 import Process from '../components/Process'
 import Testimonials from '../components/Testimonials'
 import GlassTypes from '../components/GlassTypes'
@@ -25,10 +26,11 @@ export default function ProyectosPage() {
 
   return (
     <>
+      <TopBar />
       <Navbar />
       <main>
         <Gallery />
-        <Services />
+        <ServicesCRO />
         <Process />
         <Testimonials />
         <GlassTypes />
