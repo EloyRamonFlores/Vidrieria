@@ -19,34 +19,34 @@ const SERVICES: Record<Category, Service[]> = {
     {
       name: 'Ventanas de aluminio y PVC',
       desc: 'Aislamiento térmico y acústico certificado.',
-      img: UNSPLASH('photo-1560440021-33f9b867899d', 900),
-      beforeImg: UNSPLASH('photo-1513694203232-719a280e022f', 900),
+      img: '/images/VentanaPvc_Antes.png',
+      beforeImg: '/images/VentanaPvc_Despues.png',
       tag: 'Antes / Después',
     },
     {
       name: 'Puertas corredizas y abatibles',
       desc: 'Diseño funcional, acabados de primer nivel.',
-      img: UNSPLASH('photo-1600596542815-ffad4c1539a9'),
+      img: '/images/Puertas Corredizas y abatibles.png',
     },
     {
       name: 'Barandales de vidrio templado',
       desc: 'Seguridad y elegancia en balcones y escaleras.',
-      img: UNSPLASH('photo-1564013799919-ab600027ffc6'),
+      img: '/images/Barandales de vidrio templado.png',
     },
     {
       name: 'Canceles de baño',
       desc: 'Vidrio templado con instalación en 48 hrs.',
-      img: UNSPLASH('photo-1552321554-5fefe8c9ef14'),
+      img: '/images/Canceles de baño.png',
     },
     {
       name: 'Espejos a medida',
       desc: 'Corte, biselado e instalación incluida.',
-      img: UNSPLASH('photo-1616594039964-ae9021a400a0'),
+      img: '/images/Espejos a la medida.png',
     },
     {
       name: 'Mosquiteros',
       desc: 'Protección sin sacrificar la vista al exterior.',
-      img: UNSPLASH('photo-1524758631624-e2822e304c36'),
+      img: '/images/Mosquiteros.png',
     },
   ],
   negocio: [
