@@ -107,12 +107,12 @@ export default function ChatWidget() {
           ref={dialogRef}
           role="dialog"
           aria-label="Chat con Eva, asistente virtual"
-          className="anim-chat-in fixed bottom-24 left-4 right-4 sm:right-auto sm:w-[380px] max-h-[520px] flex flex-col bg-white rounded-2xl shadow-2xl shadow-black/15 z-50 overflow-hidden border border-gray-200/60"
+          className="anim-chat-in fixed bottom-24 left-4 right-4 sm:right-auto sm:w-[380px] max-h-[520px] flex flex-col bg-[#0d0f14] rounded-2xl shadow-2xl shadow-black/60 z-50 overflow-hidden border border-white/[0.08]"
         >
-          <div className="bg-slate-800 px-4 py-3.5 flex items-center justify-between shrink-0">
+          <div className="bg-[#08090e] border-b border-white/[0.06] px-4 py-3.5 flex items-center justify-between shrink-0">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-blue-600/30 rounded-full flex items-center justify-center">
-                <svg className="w-5 h-5 text-blue-300" fill="currentColor" viewBox="0 0 24 24">
+              <div className="w-9 h-9 bg-emerald-400/10 border border-emerald-400/20 rounded-full flex items-center justify-center">
+                <svg className="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
                 </svg>
               </div>
@@ -135,13 +135,13 @@ export default function ChatWidget() {
             </button>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50/80 min-h-0" aria-live="polite">
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-[#0a0b10] min-h-0" aria-live="polite">
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[85%] px-3.5 py-2.5 text-sm leading-relaxed whitespace-pre-wrap ${
                   m.role === 'user'
-                    ? 'bg-blue-600 text-white rounded-2xl rounded-br-md'
-                    : 'bg-white text-gray-700 rounded-2xl rounded-bl-md shadow-sm border border-gray-100'
+                    ? 'bg-emerald-400 text-emerald-950 font-medium rounded-2xl rounded-br-md'
+                    : 'bg-white/[0.06] text-white/80 rounded-2xl rounded-bl-md border border-white/[0.08]'
                 }`}>
                   {m.text}
                 </div>
@@ -149,7 +149,7 @@ export default function ChatWidget() {
             ))}
             {loading && (
               <div className="flex justify-start">
-                <div className="bg-white px-4 py-3 rounded-2xl rounded-bl-md shadow-sm border border-gray-100 flex gap-1.5 items-center">
+                <div className="bg-white/[0.06] border border-white/[0.08] px-4 py-3 rounded-2xl rounded-bl-md flex gap-1.5 items-center">
                   <span className="w-1.5 h-1.5 bg-gray-300 rounded-full animate-bounce [animation-delay:0ms]" />
                   <span className="w-1.5 h-1.5 bg-gray-300 rounded-full animate-bounce [animation-delay:150ms]" />
                   <span className="w-1.5 h-1.5 bg-gray-300 rounded-full animate-bounce [animation-delay:300ms]" />
@@ -159,7 +159,7 @@ export default function ChatWidget() {
             <div ref={bottomRef} />
           </div>
 
-          <div className="px-3 py-3 bg-white border-t border-gray-100 flex gap-2 shrink-0">
+          <div className="px-3 py-3 bg-[#08090e] border-t border-white/[0.06] flex gap-2 shrink-0">
             <label htmlFor="chat-input" className="sr-only">Escribe tu mensaje</label>
             <input
               id="chat-input"
@@ -170,13 +170,13 @@ export default function ChatWidget() {
               onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
               placeholder="Escribe tu mensaje..."
               disabled={loading}
-              className="flex-1 bg-gray-100 rounded-full px-4 py-2.5 text-sm outline-none focus:ring-2 focus:ring-blue-500/40 focus:bg-white disabled:opacity-50 transition-all"
+              className="flex-1 bg-white/[0.06] border border-white/[0.08] rounded-full px-4 py-2.5 text-sm text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-emerald-400/30 focus:border-emerald-400/30 disabled:opacity-50 transition-all"
             />
             <button
               onClick={sendMessage}
               disabled={loading || !input.trim()}
               aria-label="Enviar"
-              className="w-11 h-11 bg-blue-600 hover:bg-blue-700 disabled:opacity-30 text-white rounded-full flex items-center justify-center transition-all shrink-0"
+              className="w-11 h-11 bg-emerald-400 hover:bg-emerald-300 disabled:opacity-30 text-emerald-950 rounded-full flex items-center justify-center transition-all shrink-0"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14m-7-7l7 7-7 7" />
@@ -196,7 +196,7 @@ export default function ChatWidget() {
         } text-white flex items-center justify-center cursor-pointer active:scale-95`}
       >
         {!open && unread && (
-          <span className="absolute -top-1 -right-1 w-4 h-4 bg-blue-500 rounded-full border-2 border-white" aria-hidden="true" />
+          <span className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-[#08090e] shadow-[0_0_8px_rgba(52,211,153,0.8)]" aria-hidden="true" />
         )}
         {open ? (
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

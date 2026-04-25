@@ -22,7 +22,7 @@ export default function GoogleMap() {
           <div className="rounded-xl overflow-hidden shadow-lg">
             <img
               src={LocalImage}
-              alt="Local de Luminox Glass Company"
+              alt="Local de Luminox Glass"
               className="w-full h-full object-cover"
             />
           </div>
