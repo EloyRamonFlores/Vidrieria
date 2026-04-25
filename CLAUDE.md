@@ -4,7 +4,7 @@
 - **n8n**: Workflows (WhatsApp Receiver, Eva agent, tools)
 - **Evolution API**: WhatsApp integration
 - **PostgreSQL + pgvector**: Database + RAG
-- **React 18 + Tailwind 4**: Landing page (https://web-pi-nine-17.vercel.app)
+- **React 18 + Tailwind 4**: Landing page
 - **OpenAI GPT-4o**: Eva agent
 
 ## ✅ Status
@@ -16,7 +16,7 @@
 - ✅ Responsive (mobile, tablet, desktop)
 - ✅ SEO optimizado (LocalBusiness schema)
 - ✅ Build: 0 errors TypeScript
-- ✅ Deployed on Vercel: https://web-pi-nine-17.vercel.app
+- ✅ Deployed on Vercel
 
 ### Componentes Creados
 1. **Navbar** — teal logo, nav links, WhatsApp CTA
@@ -56,7 +56,6 @@
 - **Icons:** Handcrafted SVGs (no external icon library)
 
 ## 📱 URLs
-- **Landing:** https://web-pi-nine-17.vercel.app
 - **Git:** monorepo `packages/clients/vidrieria/web/`
 
 ## ⏭️ Next Steps (Optional)
