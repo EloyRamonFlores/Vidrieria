@@ -87,6 +87,7 @@ const SERVICES: Record<Category, Service[]> = {
 function BeforeAfterSlider({ before, after }: { before: string; after: string }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [pos, setPos] = useState(75)
+  const [isDragging, setIsDragging] = useState(false)
   const dragging = useRef(false)
 
   // Hint animation on mount: slide from 75→50 to signal interactivity
@@ -103,11 +104,12 @@ function BeforeAfterSlider({ before, after }: { before: string; after: string })
 
   const onPointerDown = (e: React.PointerEvent) => {
     dragging.current = true
+    setIsDragging(true)
     ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
     calc(e.clientX)
   }
   const onPointerMove = (e: React.PointerEvent) => { if (dragging.current) calc(e.clientX) }
-  const onPointerUp = () => { dragging.current = false }
+  const onPointerUp = () => { dragging.current = false; setIsDragging(false) }
 
   const onKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'ArrowLeft') setPos(p => Math.max(5, p - 5))
@@ -140,7 +142,7 @@ function BeforeAfterSlider({ before, after }: { before: string; after: string })
 
       {/* After — clipped reveal from the left */}
       <div
-        className="absolute inset-0 overflow-hidden transition-[clip-path] duration-700 ease-out"
+        className={`absolute inset-0 overflow-hidden ${isDragging ? '' : 'transition-[clip-path] duration-700 ease-out'}`}
         style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
       >
         <img
