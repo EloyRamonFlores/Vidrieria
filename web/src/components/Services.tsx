@@ -53,7 +53,7 @@ const SERVICES: Record<Category, Service[]> = {
     {
       name: 'Fachadas comerciales',
       desc: 'Impacto visual que atrae y convierte clientes.',
-      img: UNSPLASH('photo-1486325212027-8081e485255e'),
+      img: '/images/Fachadas Comerciales.png',
     },
     {
       name: 'Frentes residenciales',
