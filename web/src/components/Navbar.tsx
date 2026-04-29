@@ -38,14 +38,19 @@ export default function Navbar() {
           href="#top"
           className={`flex items-center gap-2.5 rounded-full border backdrop-blur-xl transition-all duration-500 ${
             scrolled
-              ? 'border-white/10 bg-black/55 py-2 pl-2 pr-4 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)]'
+              ? 'border-slate-200 bg-white/90 py-2 pl-2 pr-4 shadow-[0_8px_30px_-12px_rgba(15,23,42,0.18)]'
               : 'border-transparent bg-transparent py-2 pl-2 pr-4'
           }`}
           aria-label="Luminox Glass, ir al inicio"
         >
           <img src={logoLuminox} alt="" className="h-7 w-auto md:h-8" />
-          <span className="font-display text-[13px] font-semibold tracking-tight text-white md:text-sm">
-            Luminox<span className="text-white/55"> Glass</span>
+          <span
+            className={`font-display text-[13px] font-semibold tracking-tight md:text-sm transition-colors duration-500 ${
+              scrolled ? 'text-slate-900' : 'text-white'
+            }`}
+          >
+            Luminox
+            <span className={scrolled ? 'text-slate-500' : 'text-white/55'}> Glass</span>
           </span>
         </a>
 
@@ -53,7 +58,7 @@ export default function Navbar() {
         <nav
           className={`hidden items-center gap-1 rounded-full border backdrop-blur-xl transition-all duration-500 md:flex ${
             scrolled
-              ? 'border-white/10 bg-black/55 px-2 py-1.5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)]'
+              ? 'border-slate-200 bg-white/90 px-2 py-1.5 shadow-[0_8px_30px_-12px_rgba(15,23,42,0.18)]'
               : 'border-white/10 bg-white/[0.05] px-2 py-1.5'
           }`}
           aria-label="Principal"
@@ -62,19 +67,23 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full px-3.5 py-1.5 text-[13px] font-medium text-white/75 transition-all hover:bg-white/10 hover:text-white"
+              className={`rounded-full px-3.5 py-1.5 text-[13px] font-medium transition-all ${
+                scrolled
+                  ? 'text-slate-600 hover:bg-blue-50 hover:text-blue-700'
+                  : 'text-white/75 hover:bg-white/10 hover:text-white'
+              }`}
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        {/* CTA — right */}
+        {/* CTA — right (always blue, brand identity) */}
         <a
           href={`https://wa.me/${PHONE}?text=${encodeURIComponent('Hola Luminox, quiero una cotización gratuita')}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden items-center gap-2 rounded-full bg-emerald-400 px-4 py-2.5 text-[13px] font-semibold text-emerald-950 ring-1 ring-emerald-300/60 shadow-[0_0_28px_-6px_rgba(52,211,153,0.8)] transition-all hover:-translate-y-0.5 hover:bg-emerald-300 hover:shadow-[0_0_36px_-4px_rgba(52,211,153,1)] md:inline-flex"
+          className="hidden items-center gap-2 rounded-full bg-blue-700 px-4 py-2.5 text-[13px] font-semibold text-white ring-1 ring-blue-600/40 shadow-lg shadow-blue-700/25 transition-all hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-xl hover:shadow-blue-700/35 md:inline-flex"
         >
           <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884" />
@@ -85,7 +94,11 @@ export default function Navbar() {
         {/* Mobile burger */}
         <button
           onClick={() => setMobileOpen((v) => !v)}
-          className={`flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white backdrop-blur-xl transition-colors hover:bg-black/60 md:hidden`}
+          className={`flex h-10 w-10 items-center justify-center rounded-full border backdrop-blur-xl transition-colors md:hidden ${
+            scrolled
+              ? 'border-slate-200 bg-white/90 text-slate-900 hover:bg-white'
+              : 'border-white/10 bg-black/40 text-white hover:bg-black/60'
+          }`}
           aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={mobileOpen}
         >
@@ -100,14 +113,14 @@ export default function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="mx-4 mt-3 rounded-2xl border border-white/10 bg-black/80 backdrop-blur-2xl md:hidden">
+        <div className="mx-4 mt-3 rounded-2xl border border-slate-200 bg-white/95 backdrop-blur-2xl shadow-xl shadow-slate-900/10 md:hidden">
           <nav className="flex flex-col gap-1 p-4" aria-label="Móvil">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                className="rounded-xl px-4 py-3 text-base font-medium text-white/85 transition hover:bg-white/5"
+                className="rounded-xl px-4 py-3 text-base font-medium text-slate-800 transition hover:bg-blue-50 hover:text-blue-700"
               >
                 {item.label}
               </a>
@@ -116,7 +129,7 @@ export default function Navbar() {
               href={`https://wa.me/${PHONE}?text=${encodeURIComponent('Hola Luminox, quiero una cotización gratuita')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-400 px-5 py-3 font-semibold text-emerald-950 transition hover:bg-emerald-300"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-blue-700 px-5 py-3 font-semibold text-white shadow-lg shadow-blue-700/25 transition hover:bg-blue-800"
             >
               Cotizar gratis por WhatsApp
             </a>

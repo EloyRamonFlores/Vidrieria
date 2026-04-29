@@ -170,7 +170,7 @@ function BeforeAfterSlider({ before, after }: { before: string; after: string })
       <span className="absolute left-3 top-3 z-10 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white/90 backdrop-blur-sm">
         Antes
       </span>
-      <span className="absolute right-3 top-3 z-10 rounded-full bg-emerald-400 px-2.5 py-1 text-[11px] font-semibold text-emerald-950">
+      <span className="absolute right-3 top-3 z-10 rounded-full bg-blue-700 px-2.5 py-1 text-[11px] font-semibold text-white">
         Después
       </span>
 
@@ -190,7 +190,7 @@ function ServiceCard({ svc, delay }: { svc: Service; delay: number }) {
 
   return (
     <div
-      className="anim-fade-up group relative overflow-hidden rounded-2xl bg-neutral-900"
+      className="anim-fade-up group relative overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-sm transition-shadow hover:shadow-lg"
       style={{ animationDelay: `${delay}ms` }}
     >
       {/* Full-bleed image or before/after slider */}
@@ -219,17 +219,17 @@ function ServiceCard({ svc, delay }: { svc: Service; delay: number }) {
         )}
       </div>
 
-      {/* Content — below the image (dark panel) */}
+      {/* Content — below the image */}
       <div className="flex flex-col gap-3 p-5">
         <div>
-          <h3 className="font-display font-semibold text-white">{svc.name}</h3>
-          <p className="mt-1 text-[13.5px] leading-relaxed text-white/55">{svc.desc}</p>
+          <h3 className="font-display font-semibold text-slate-900">{svc.name}</h3>
+          <p className="mt-1 text-[13.5px] leading-relaxed text-slate-600">{svc.desc}</p>
         </div>
         <a
           href={waLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex w-fit items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-[13px] font-semibold text-white backdrop-blur-md transition-all hover:border-emerald-400/50 hover:bg-emerald-400/10 hover:text-emerald-300"
+          className="inline-flex w-fit items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-[13px] font-semibold text-slate-700 transition-all hover:border-blue-600 hover:bg-blue-50 hover:text-blue-700"
         >
           Cotizar
           <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
@@ -246,20 +246,20 @@ export default function Services() {
   const [tab, setTab] = useState<Category>('hogar')
 
   return (
-    <section id="servicios" className="bg-[#08090e] py-20 md:py-28">
+    <section id="servicios" className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4">
 
         {/* Header */}
         <div className="reveal mb-12 text-center">
-          <div className="mb-4 inline-flex items-center justify-center gap-2 text-[11px] font-bold tracking-[0.2em] text-emerald-400 uppercase">
-            <span className="h-px w-5 bg-emerald-400" />
+          <div className="mb-4 inline-flex items-center justify-center gap-2 text-[11px] font-bold tracking-[0.2em] text-blue-700 uppercase">
+            <span className="h-px w-5 bg-blue-700" />
             Servicios
-            <span className="h-px w-5 bg-emerald-400" />
+            <span className="h-px w-5 bg-blue-700" />
           </div>
-          <h2 className="mb-4 font-display text-4xl font-light tracking-tight text-white md:text-5xl">
+          <h2 className="mb-4 font-display text-4xl font-light tracking-tight text-slate-900 md:text-5xl">
             ¿Qué necesitas para tu espacio?
           </h2>
-          <p className="mx-auto max-w-md text-[15px] leading-relaxed text-white/55">
+          <p className="mx-auto max-w-md text-[15px] leading-relaxed text-slate-600">
             Fabricamos e instalamos a tu medida. Cada proyecto incluye cotización sin costo.
           </p>
         </div>
@@ -277,8 +277,8 @@ export default function Services() {
               onClick={() => setTab(t.id)}
               className={`rounded-full px-5 py-2.5 text-[13px] font-semibold transition-all ${
                 tab === t.id
-                  ? 'bg-white text-slate-950 shadow-md'
-                  : 'border border-white/15 bg-white/[0.05] text-white/70 hover:border-white/30 hover:text-white'
+                  ? 'bg-blue-700 text-white shadow-md'
+                  : 'border border-slate-300 bg-slate-100 text-slate-700 hover:border-slate-400 hover:text-slate-900'
               }`}
             >
               {t.label}
@@ -294,15 +294,15 @@ export default function Services() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="reveal mt-12 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-8 text-center backdrop-blur-md md:p-12">
-          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/[0.08] px-3 py-1 text-[11px] font-semibold tracking-[0.2em] text-emerald-300 uppercase">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]" />
+        <div className="reveal mt-12 overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-8 text-center md:p-12">
+          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] font-semibold tracking-[0.2em] text-blue-700 uppercase">
+            <span className="h-1.5 w-1.5 rounded-full bg-blue-700" />
             Asesoría gratuita
           </div>
-          <h3 className="mt-4 text-2xl font-light text-white md:text-3xl">
+          <h3 className="mt-4 text-2xl font-light text-slate-900 md:text-3xl">
             ¿No estás seguro qué necesitas?
           </h3>
-          <p className="mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-white/55">
+          <p className="mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-slate-600">
             Te orientamos sin compromiso. Una llamada o mensaje es suficiente.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -310,7 +310,7 @@ export default function Services() {
               href={`https://wa.me/${PHONE}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-full bg-emerald-400 px-6 py-3.5 text-[14px] font-semibold text-emerald-950 ring-1 ring-emerald-300/50 shadow-[0_0_30px_-8px_rgba(52,211,153,0.9)] transition-all hover:-translate-y-0.5 hover:bg-emerald-300"
+              className="inline-flex items-center gap-2.5 rounded-full bg-emerald-500 px-6 py-3.5 text-[14px] font-semibold text-white ring-1 ring-emerald-400/60 shadow-lg shadow-emerald-500/25 transition-all hover:-translate-y-0.5 hover:bg-emerald-600"
             >
               <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884" />
@@ -319,7 +319,7 @@ export default function Services() {
             </a>
             <a
               href={`tel:+52${PHONE.slice(-10)}`}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-6 py-3.5 text-[14px] font-semibold text-white transition-all hover:border-white/30 hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3.5 text-[14px] font-semibold text-slate-700 transition-all hover:border-blue-600 hover:bg-blue-50 hover:text-blue-700"
             >
               Llamar al taller
             </a>

@@ -63,36 +63,36 @@ export default function Testimonials() {
   const current = TESTIMONIALS[index]
 
   return (
-    <section className="relative overflow-hidden bg-[#08090e] py-20 md:py-28">
+    <section className="relative overflow-hidden bg-white py-20 md:py-28">
 
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute left-1/2 top-1/2 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(52,211,153,0.07),transparent_65%)] blur-3xl" />
+        <div className="absolute left-1/2 top-1/2 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.06),transparent_65%)] blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-4xl px-4">
 
         {/* Header */}
         <div className="reveal mb-12 text-center">
-          <div className="mb-5 inline-flex items-center justify-center gap-2 text-[11px] font-bold tracking-[0.2em] text-emerald-400 uppercase">
-            <span className="h-px w-5 bg-emerald-400" />
+          <div className="mb-5 inline-flex items-center justify-center gap-2 text-[11px] font-bold tracking-[0.2em] text-blue-700 uppercase">
+            <span className="h-px w-5 bg-blue-700" />
             Testimonios
-            <span className="h-px w-5 bg-emerald-400" />
+            <span className="h-px w-5 bg-blue-700" />
           </div>
-          <h2 className="font-display text-4xl font-light tracking-tight text-white md:text-5xl">
+          <h2 className="font-display text-4xl font-light tracking-tight text-slate-900 md:text-5xl">
             Lo que dicen{' '}
-            <span className="bg-gradient-to-r from-white via-emerald-200 to-emerald-400 bg-clip-text text-transparent">
+            <span className="text-blue-700">
               nuestros clientes.
             </span>
           </h2>
         </div>
 
         {/* Floating glass card */}
-        <div className="relative rounded-3xl border border-white/10 bg-white/[0.04] p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7),0_0_50px_-20px_rgba(52,211,153,0.1)] backdrop-blur-md md:p-12">
+        <div className="relative rounded-3xl border border-slate-200 bg-white p-8 shadow-lg shadow-slate-900/10 md:p-12">
 
           {/* Large decorative quote marks */}
           <div
-            className="pointer-events-none absolute right-6 top-6 font-display text-[7rem] font-bold leading-none text-emerald-400/15 select-none md:right-10 md:top-8"
+            className="pointer-events-none absolute right-6 top-6 font-display text-[7rem] font-bold leading-none text-blue-500/10 select-none md:right-10 md:top-8"
             aria-hidden="true"
           >
             "
@@ -108,7 +108,7 @@ export default function Testimonials() {
           </div>
 
           {/* Quote */}
-          <blockquote className="mb-8 text-[1.15rem] font-light leading-relaxed text-white/85 md:text-xl">
+          <blockquote className="mb-8 text-[1.15rem] font-light leading-relaxed text-slate-900 md:text-xl">
             "{current.text}"
           </blockquote>
 
@@ -118,22 +118,22 @@ export default function Testimonials() {
             {/* Avatar + name */}
             <div className="flex items-center gap-4">
               {/* Glassmorphism initials avatar */}
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-400/10 shadow-[0_0_18px_-4px_rgba(52,211,153,0.5)]">
-                <span className="font-display text-sm font-bold text-emerald-300">{current.initials}</span>
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-blue-200 bg-blue-50 shadow-sm">
+                <span className="font-display text-sm font-bold text-blue-700">{current.initials}</span>
               </div>
 
               <div>
-                <div className="font-semibold text-white">{current.name}</div>
+                <div className="font-semibold text-slate-900">{current.name}</div>
                 <div className="mt-0.5 flex flex-wrap items-center gap-2">
                   {/* Location badge */}
-                  <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/20 bg-emerald-400/[0.08] px-2 py-0.5 text-[11px] font-medium text-emerald-300">
+                  <span className="inline-flex items-center gap-1 rounded-full border border-blue-200 bg-blue-50 px-2 py-0.5 text-[11px] font-medium text-blue-700">
                     <svg className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
                     {current.location}
                   </span>
-                  <span className="text-[11px] text-white/40">{current.service}</span>
+                  <span className="text-[11px] text-slate-500">{current.service}</span>
                 </div>
               </div>
             </div>
@@ -143,19 +143,19 @@ export default function Testimonials() {
               <button
                 onClick={() => setIndex((index - 1 + total) % total)}
                 aria-label="Anterior"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/60 transition hover:border-emerald-400/40 hover:bg-emerald-400/10 hover:text-emerald-300"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-slate-100 text-slate-600 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700"
               >
                 <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
-              <span className="min-w-[3rem] text-center text-xs font-medium text-white/40">
+              <span className="min-w-[3rem] text-center text-xs font-medium text-slate-600">
                 {index + 1} / {total}
               </span>
               <button
                 onClick={() => setIndex((index + 1) % total)}
                 aria-label="Siguiente"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/60 transition hover:border-emerald-400/40 hover:bg-emerald-400/10 hover:text-emerald-300"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-slate-100 text-slate-600 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700"
               >
                 <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -172,7 +172,7 @@ export default function Testimonials() {
             href="https://www.google.com/maps"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold text-white/50 transition hover:text-emerald-300"
+            className="text-sm font-semibold text-slate-600 transition hover:text-blue-700"
           >
             Ver todas las reseñas en Google →
           </a>

@@ -40,25 +40,25 @@ const BENEFITS = [
 
 export default function Benefits() {
   return (
-    <section id="beneficios" className="relative overflow-hidden bg-[#08090e] py-20 md:py-28">
+    <section id="beneficios" className="relative overflow-hidden bg-slate-50 py-20 md:py-28">
 
       {/* Ambient glow — subtle radial light that makes the glass cards feel lit */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute left-1/2 top-1/2 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(52,211,153,0.08),transparent_65%)] blur-3xl" />
+        <div className="absolute left-1/2 top-1/2 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.06),transparent_65%)] blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4">
 
         {/* Header */}
         <div className="reveal mb-16 text-center">
-          <div className="mb-5 inline-flex items-center justify-center gap-2 text-[11px] font-bold tracking-[0.2em] text-emerald-400 uppercase">
-            <span className="h-px w-5 bg-emerald-400" />
+          <div className="mb-5 inline-flex items-center justify-center gap-2 text-[11px] font-bold tracking-[0.2em] text-blue-700 uppercase">
+            <span className="h-px w-5 bg-blue-700" />
             ¿Por qué elegirnos?
-            <span className="h-px w-5 bg-emerald-400" />
+            <span className="h-px w-5 bg-blue-700" />
           </div>
-          <h2 className="font-display text-4xl font-light tracking-tight text-white md:text-5xl lg:text-[3.5rem]">
+          <h2 className="font-display text-4xl font-light tracking-tight text-slate-900 md:text-5xl lg:text-[3.5rem]">
             No solo vendemos vidrio.
-            <span className="block bg-gradient-to-r from-white via-emerald-200 to-emerald-400 bg-clip-text text-transparent">
+            <span className="block text-blue-700">
               Entregamos tranquilidad.
             </span>
           </h2>
@@ -69,16 +69,16 @@ export default function Benefits() {
           {BENEFITS.map((b, i) => (
             <div
               key={b.title}
-              className="anim-fade-up group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-white/[0.07] hover:shadow-[0_0_40px_-12px_rgba(52,211,153,0.35)]"
+              className="anim-fade-up group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md hover:shadow-blue-700/20"
               style={{ animationDelay: `${i * 80}ms` }}
             >
               {/* Corner glow on hover */}
-              <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-emerald-400/0 blur-2xl transition-all duration-500 group-hover:bg-emerald-400/15" />
+              <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-blue-500/0 blur-2xl transition-all duration-500 group-hover:bg-blue-500/8" />
 
-              {/* Icon — neon green with glow */}
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-emerald-400/25 bg-emerald-400/10 shadow-[0_0_20px_-4px_rgba(52,211,153,0.4)] transition-all duration-300 group-hover:border-emerald-400/40 group-hover:shadow-[0_0_28px_-2px_rgba(52,211,153,0.6)]">
+              {/* Icon — blue with soft shadow */}
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-blue-200 bg-blue-50 shadow-sm transition-all duration-300 group-hover:border-blue-300 group-hover:shadow-md group-hover:shadow-blue-700/20">
                 <svg
-                  className="h-5 w-5 text-emerald-400"
+                  className="h-5 w-5 text-blue-700"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -89,26 +89,26 @@ export default function Benefits() {
               </div>
 
               {/* Text */}
-              <h3 className="mb-2 font-display text-[15px] font-bold text-white">{b.title}</h3>
-              <p className="text-[13.5px] leading-relaxed text-white/65">
+              <h3 className="mb-2 font-display text-[15px] font-bold text-slate-900">{b.title}</h3>
+              <p className="text-[13.5px] leading-relaxed text-slate-600">
                 {b.desc}{' '}
-                <span className="font-semibold text-white/90">{b.emphasis}</span>
+                <span className="font-semibold text-slate-900">{b.emphasis}</span>
               </p>
             </div>
           ))}
         </div>
 
         {/* Divider stat strip */}
-        <div className="reveal mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-4">
+        <div className="reveal mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 md:grid-cols-4">
           {[
             { n: '+200', label: 'proyectos instalados' },
             { n: '15+',  label: 'años en Rosarito' },
             { n: '48h',  label: 'entrega express' },
             { n: '100%', label: 'equipo propio' },
           ].map(stat => (
-            <div key={stat.label} className="flex flex-col items-center gap-1 bg-[#08090e] px-4 py-6 text-center">
-              <span className="font-display text-3xl font-bold text-emerald-400 drop-shadow-[0_0_12px_rgba(52,211,153,0.7)]">{stat.n}</span>
-              <span className="text-[11px] font-medium tracking-wide text-white/70 uppercase">{stat.label}</span>
+            <div key={stat.label} className="flex flex-col items-center gap-1 bg-white px-4 py-6 text-center">
+              <span className="font-display text-3xl font-bold text-blue-700">{stat.n}</span>
+              <span className="text-[11px] font-medium tracking-wide text-slate-600 uppercase">{stat.label}</span>
             </div>
           ))}
         </div>

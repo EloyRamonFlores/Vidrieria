@@ -37,25 +37,25 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section id="proceso" className="relative overflow-hidden bg-[#08090e] py-20 md:py-28">
+    <section id="proceso" className="relative overflow-hidden bg-slate-50 py-20 md:py-28">
 
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute left-1/2 top-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(52,211,153,0.07),transparent_65%)] blur-3xl" />
+        <div className="absolute left-1/2 top-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.05),transparent_65%)] blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4">
 
         {/* Header */}
         <div className="reveal mb-20 text-center">
-          <div className="mb-5 inline-flex items-center justify-center gap-2 text-[11px] font-bold tracking-[0.2em] text-emerald-400 uppercase">
-            <span className="h-px w-5 bg-emerald-400" />
+          <div className="mb-5 inline-flex items-center justify-center gap-2 text-[11px] font-bold tracking-[0.2em] text-blue-700 uppercase">
+            <span className="h-px w-5 bg-blue-700" />
             Cómo trabajamos
-            <span className="h-px w-5 bg-emerald-400" />
+            <span className="h-px w-5 bg-blue-700" />
           </div>
-          <h2 className="font-display text-4xl font-light tracking-tight text-white md:text-5xl">
+          <h2 className="font-display text-4xl font-light tracking-tight text-slate-900 md:text-5xl">
             Tres pasos y tu proyecto{' '}
-            <span className="bg-gradient-to-r from-white via-emerald-200 to-emerald-400 bg-clip-text text-transparent">
+            <span className="text-blue-700">
               listo.
             </span>
           </h2>
@@ -69,7 +69,7 @@ export default function Process() {
             aria-hidden="true"
             className="pointer-events-none absolute left-[16.5%] right-[16.5%] top-10 hidden h-px md:block"
             style={{
-              background: 'linear-gradient(to right, rgba(255,255,255,0.08) 0%, rgba(52,211,153,0.5) 50%, rgba(52,211,153,0.15) 100%)',
+              background: 'linear-gradient(to right, rgba(226,232,240,1) 0%, rgba(29,78,216,1) 50%, rgba(251,191,36,1) 100%)',
             }}
           />
 
@@ -80,21 +80,21 @@ export default function Process() {
               style={{ animationDelay: `${i * 100}ms` }}
             >
               {/* Glass circle */}
-              <div className="relative z-10 mb-7 flex h-20 w-20 items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/[0.07] shadow-[0_0_30px_-8px_rgba(52,211,153,0.45)] backdrop-blur-md transition-all duration-300 hover:border-emerald-400/50 hover:shadow-[0_0_45px_-4px_rgba(52,211,153,0.7)]">
+              <div className="relative z-10 mb-7 flex h-20 w-20 items-center justify-center rounded-full border border-blue-200 bg-blue-50 shadow-md shadow-blue-700/20 transition-all duration-300 hover:border-blue-300 hover:shadow-lg hover:shadow-blue-700/30">
                 {/* Number label */}
-                <span className="font-display text-2xl font-bold text-emerald-400 drop-shadow-[0_0_8px_rgba(52,211,153,0.8)]">
+                <span className="font-display text-2xl font-bold text-blue-700">
                   {s.num}
                 </span>
                 {/* Subtle inner ring */}
-                <div className="pointer-events-none absolute inset-2 rounded-full border border-emerald-400/10" />
+                <div className="pointer-events-none absolute inset-2 rounded-full border border-blue-300/20" />
               </div>
 
               {/* Glass card */}
-              <div className="w-full rounded-2xl border border-white/8 bg-white/[0.03] p-6 backdrop-blur-sm">
+              <div className="w-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                 {/* Icon + time badge */}
                 <div className="mb-4 flex items-center justify-center gap-3">
                   <svg
-                    className="h-4 w-4 shrink-0 text-emerald-400"
+                    className="h-4 w-4 shrink-0 text-blue-700"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -102,7 +102,7 @@ export default function Process() {
                   >
                     {s.icon}
                   </svg>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/20 bg-emerald-400/[0.08] px-2.5 py-0.5 text-[11px] font-bold tracking-wide text-emerald-300">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-2.5 py-0.5 text-[11px] font-bold tracking-wide text-blue-700">
                     <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -110,8 +110,8 @@ export default function Process() {
                   </span>
                 </div>
 
-                <h3 className="mb-2 font-display text-[17px] font-semibold text-white">{s.title}</h3>
-                <p className="text-[13.5px] leading-relaxed text-white/60">{s.desc}</p>
+                <h3 className="mb-2 font-display text-[17px] font-semibold text-slate-900">{s.title}</h3>
+                <p className="text-[13.5px] leading-relaxed text-slate-600">{s.desc}</p>
               </div>
             </div>
           ))}

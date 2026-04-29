@@ -40,10 +40,10 @@ export default function ScrollVideoHero() {
       className="relative w-full overflow-hidden bg-[#05060a] min-h-[100svh] flex items-stretch"
       aria-label="Luminox Glass — vidrio templado de alta gama"
     >
-      {/* Ambient backdrop — soft radial gradients fill the empty space behind the panel */}
+      {/* Ambient backdrop — soft radial gradients (brand: blue + gold) */}
       <div className="pointer-events-none absolute inset-0 hidden md:block" aria-hidden="true">
-        <div className="absolute -right-[10%] top-1/2 h-[120%] w-[55%] -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.18),rgba(16,185,129,0)_60%)] blur-3xl" />
-        <div className="absolute -left-[10%] -top-[20%] h-[60%] w-[50%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.10),transparent_70%)] blur-3xl" />
+        <div className="absolute -right-[10%] top-1/2 h-[120%] w-[55%] -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(251,191,36,0.12),rgba(251,191,36,0)_60%)] blur-3xl" />
+        <div className="absolute -left-[10%] -top-[20%] h-[60%] w-[50%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(29,78,216,0.20),transparent_70%)] blur-3xl" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.04),transparent_50%)]" />
       </div>
 
@@ -75,7 +75,7 @@ export default function ScrollVideoHero() {
         }}
         aria-hidden="true"
       >
-        <div className="relative h-full w-full overflow-hidden rounded-[28px] border border-white/10 bg-black shadow-[0_50px_140px_-30px_rgba(0,0,0,0.85),0_0_60px_-12px_rgba(16,185,129,0.18)] ring-1 ring-inset ring-white/5">
+        <div className="relative h-full w-full overflow-hidden rounded-[28px] border border-white/10 bg-black shadow-[0_50px_140px_-30px_rgba(0,0,0,0.85),0_0_60px_-12px_rgba(29,78,216,0.22)] ring-1 ring-inset ring-white/5">
           <video
             ref={videoRef}
             src="/hero-video.mp4"
@@ -99,7 +99,7 @@ export default function ScrollVideoHero() {
           />
           {/* Floating chip */}
           <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/55 px-3 py-1.5 text-[10px] font-medium tracking-[0.18em] text-white/85 uppercase backdrop-blur-md">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.9)]" />
             Proyecto Luminox
           </div>
         </div>
@@ -115,9 +115,9 @@ export default function ScrollVideoHero() {
       >
         <div className="md:max-w-[52%] lg:max-w-[50%] md:pr-6">
           <div
-            className="anim-fade-up mb-6 inline-flex w-fit items-center gap-2.5 rounded-full border border-emerald-300/25 bg-emerald-400/[0.08] px-3.5 py-1.5 text-[10.5px] font-semibold tracking-[0.22em] text-emerald-200 uppercase backdrop-blur-md md:text-[11px]"
+            className="anim-fade-up mb-6 inline-flex w-fit items-center gap-2.5 rounded-full border border-amber-400/30 bg-amber-400/[0.10] px-3.5 py-1.5 text-[10.5px] font-semibold tracking-[0.22em] text-amber-300 uppercase backdrop-blur-md md:text-[11px]"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,1)]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,1)]" />
             Ingeniería en Vidrio Templado
           </div>
 
@@ -125,7 +125,7 @@ export default function ScrollVideoHero() {
             Transformamos
             <span className="block">tu visión</span>
             <span className="block">
-              en realidad<span className="text-emerald-400">.</span>
+              en realidad<span className="text-amber-400">.</span>
             </span>
           </h1>
 
@@ -140,7 +140,7 @@ export default function ScrollVideoHero() {
               href={`https://wa.me/${PHONE}?text=${WA_MSG}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center gap-2.5 rounded-full bg-emerald-400 px-6 py-3.5 text-[14px] font-semibold text-emerald-950 ring-1 ring-emerald-300/60 shadow-[0_0_40px_-10px_rgba(52,211,153,0.85)] transition-all hover:-translate-y-0.5 hover:bg-emerald-300 hover:shadow-[0_0_60px_-6px_rgba(52,211,153,1)]"
+              className="group relative inline-flex items-center justify-center gap-2.5 rounded-full bg-emerald-500 px-6 py-3.5 text-[14px] font-semibold text-white ring-1 ring-emerald-400/60 shadow-[0_0_40px_-10px_rgba(34,197,94,0.85)] transition-all hover:-translate-y-0.5 hover:bg-emerald-400 hover:shadow-[0_0_60px_-6px_rgba(34,197,94,1)]"
             >
               <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884" />
@@ -178,6 +178,12 @@ export default function ScrollVideoHero() {
         Scroll
         <span className="block h-6 w-px animate-pulse bg-gradient-to-b from-white/50 to-transparent" />
       </div>
+
+      {/* Bottom fade — smooth transition from dark hero to white sections below */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-24 bg-gradient-to-b from-transparent to-white"
+        aria-hidden="true"
+      />
     </section>
   )
 }

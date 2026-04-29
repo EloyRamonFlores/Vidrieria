@@ -146,7 +146,7 @@ function Lightbox({
             target="_blank"
             rel="noopener noreferrer"
             onClick={e => e.stopPropagation()}
-            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-emerald-400 px-4 py-2 text-[13px] font-semibold text-emerald-950 transition hover:bg-emerald-300"
+            className="shrink-0 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-4 py-2 text-[13px] font-semibold text-white transition hover:bg-emerald-600"
           >
             Cotizar similar
           </a>
@@ -172,8 +172,8 @@ function GalleryCard({
 }) {
   return (
     <button
-      className={`anim-fade-up group relative h-full w-full overflow-hidden rounded-2xl bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#08090e] ${
-        isFeatured ? 'ring-1 ring-emerald-400/30' : ''
+      className={`anim-fade-up group relative h-full w-full overflow-hidden rounded-2xl bg-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-700 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${
+        isFeatured ? 'ring-1 ring-blue-700/30' : ''
       }`}
       onClick={onClick}
       aria-label={`Ver proyecto: ${item.project}`}
@@ -191,8 +191,8 @@ function GalleryCard({
 
       {/* Featured badge */}
       {isFeatured && (
-        <div className="absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1 text-[10px] font-bold tracking-[0.16em] text-emerald-300 uppercase backdrop-blur-md">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]" />
+        <div className="absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/15 px-2.5 py-1 text-[10px] font-bold tracking-[0.16em] text-amber-100 uppercase backdrop-blur-md">
+          <span className="h-1.5 w-1.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.9)]" />
           Nuestro Equipo
         </div>
       )}
@@ -237,20 +237,20 @@ export default function Gallery() {
   const nextLightbox = useCallback(() => setLightbox(i => (i !== null && i < displayed.length - 1 ? i + 1 : i)), [displayed.length])
 
   return (
-    <section id="proyectos" className="bg-[#08090e] py-20 md:py-28">
+    <section id="proyectos" className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4">
 
         {/* Header */}
         <div className="reveal mb-12 text-center">
-          <div className="mb-4 inline-flex items-center justify-center gap-2 text-[11px] font-bold tracking-[0.2em] text-emerald-400 uppercase">
-            <span className="h-px w-5 bg-emerald-400" />
+          <div className="mb-4 inline-flex items-center justify-center gap-2 text-[11px] font-bold tracking-[0.2em] text-blue-700 uppercase">
+            <span className="h-px w-5 bg-blue-700" />
             Portfolio
-            <span className="h-px w-5 bg-emerald-400" />
+            <span className="h-px w-5 bg-blue-700" />
           </div>
-          <h2 className="mb-4 font-display text-4xl font-light tracking-tight text-white md:text-5xl">
+          <h2 className="mb-4 font-display text-4xl font-light tracking-tight text-slate-900 md:text-5xl">
             Proyectos reales en Rosarito
           </h2>
-          <p className="mx-auto max-w-md text-[15px] leading-relaxed text-white/55">
+          <p className="mx-auto max-w-md text-[15px] leading-relaxed text-slate-600">
             Cada instalación documentada. Trabajo local, equipo propio, garantía incluida.
           </p>
         </div>
@@ -265,13 +265,13 @@ export default function Gallery() {
               onClick={() => setFilter(f.id)}
               className={`rounded-full px-4 py-2 text-[13px] font-medium transition-all ${
                 filter === f.id
-                  ? 'bg-white text-slate-950 shadow-md'
-                  : 'border border-white/15 bg-white/[0.04] text-white/65 hover:border-white/30 hover:text-white'
+                  ? 'bg-blue-700 text-white shadow-md'
+                  : 'border border-slate-300 bg-slate-100 text-slate-700 hover:border-slate-400 hover:text-slate-900'
               }`}
             >
               {f.label}
               {f.id !== 'todos' && (
-                <span className={`ml-1.5 text-[11px] ${filter === f.id ? 'text-slate-500' : 'text-white/35'}`}>
+                <span className={`ml-1.5 text-[11px] ${filter === f.id ? 'text-white/70' : 'text-slate-600'}`}>
                   {PORTFOLIO.filter(p => p.category === f.id).length}
                 </span>
               )}
@@ -304,14 +304,14 @@ export default function Gallery() {
 
         {/* CTA */}
         <div className="reveal mt-12 text-center">
-          <p className="mb-4 text-sm text-white/45">
+          <p className="mb-4 text-sm text-slate-600">
             {displayed.length} proyecto{displayed.length !== 1 ? 's' : ''} mostrados
           </p>
           <a
             href={`https://wa.me/${PHONE}?text=${encodeURIComponent('Hola, vi su portafolio y me gustaría cotizar un proyecto similar. ¿Podemos hablar?')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 rounded-full bg-emerald-400 px-7 py-4 text-[15px] font-semibold text-emerald-950 ring-1 ring-emerald-300/50 shadow-[0_0_40px_-10px_rgba(52,211,153,0.9)] transition-all hover:-translate-y-0.5 hover:bg-emerald-300 hover:shadow-[0_0_60px_-8px_rgba(52,211,153,1)]"
+            className="group inline-flex items-center gap-3 rounded-full bg-emerald-500 px-7 py-4 text-[15px] font-semibold text-white ring-1 ring-emerald-400/60 shadow-lg shadow-emerald-500/25 transition-all hover:-translate-y-0.5 hover:bg-emerald-600 hover:shadow-xl hover:shadow-emerald-500/40"
           >
             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884" />
