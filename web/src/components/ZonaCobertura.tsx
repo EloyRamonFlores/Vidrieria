@@ -22,7 +22,7 @@ export default function ZonaCobertura() {
   const [pulsing, setPulsing] = useState(false)
 
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section className="relative overflow-hidden bg-slate-50">
       <div className="grid min-h-[600px] grid-cols-1 lg:grid-cols-2">
 
         {/* ── LEFT: Text ─────────────────────────────────────── */}

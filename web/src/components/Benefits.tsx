@@ -40,7 +40,7 @@ const BENEFITS = [
 
 export default function Benefits() {
   return (
-    <section id="beneficios" className="relative overflow-hidden bg-slate-50 py-20 md:py-28">
+    <section id="beneficios" className="relative overflow-hidden bg-white py-20 md:py-28">
 
       {/* Ambient glow — subtle radial light that makes the glass cards feel lit */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">

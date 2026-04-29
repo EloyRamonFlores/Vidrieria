@@ -237,7 +237,7 @@ export default function Gallery() {
   const nextLightbox = useCallback(() => setLightbox(i => (i !== null && i < displayed.length - 1 ? i + 1 : i)), [displayed.length])
 
   return (
-    <section id="proyectos" className="bg-white py-20 md:py-28">
+    <section id="proyectos" className="bg-slate-50 py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4">
 
         {/* Header */}

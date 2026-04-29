@@ -246,7 +246,7 @@ export default function Services() {
   const [tab, setTab] = useState<Category>('hogar')
 
   return (
-    <section id="servicios" className="bg-white py-20 md:py-28">
+    <section id="servicios" className="bg-slate-50 py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-4">
 
         {/* Header */}

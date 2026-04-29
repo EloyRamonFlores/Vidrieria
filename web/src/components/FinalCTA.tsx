@@ -3,7 +3,7 @@ const TEL = PHONE.slice(-10)
 
 export default function FinalCTA() {
   return (
-    <section id="contacto" className="relative overflow-hidden bg-slate-50 py-24 md:py-36">
+    <section id="contacto" className="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-24 md:py-36">
 
       {/* Radial glow that emanates from the CTA button area */}
       <div

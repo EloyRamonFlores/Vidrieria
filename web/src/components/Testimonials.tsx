@@ -63,7 +63,7 @@ export default function Testimonials() {
   const current = TESTIMONIALS[index]
 
   return (
-    <section className="relative overflow-hidden bg-white py-20 md:py-28">
+    <section className="relative overflow-hidden bg-stone-50 py-20 md:py-28">
 
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">

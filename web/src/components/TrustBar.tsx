@@ -162,7 +162,7 @@ export default function TrustBar() {
     <section
       ref={sectionRef}
       aria-label="Indicadores de confianza"
-      className="relative overflow-hidden bg-slate-50 border-y border-slate-200"
+      className="relative overflow-hidden bg-white border-y border-slate-200"
     >
       {/* Portfolio photo at low opacity — subtle texture for depth */}
       <div

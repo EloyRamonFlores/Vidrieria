@@ -37,7 +37,7 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section id="proceso" className="relative overflow-hidden bg-slate-50 py-20 md:py-28">
+    <section id="proceso" className="relative overflow-hidden bg-white py-20 md:py-28">
 
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">

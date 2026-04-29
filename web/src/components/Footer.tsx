@@ -9,7 +9,7 @@ export default function Footer() {
   const [folioOpen, setFolioOpen] = useState(false)
 
   return (
-    <footer className="border-t border-slate-200 bg-white pb-24 pt-14 text-slate-600 md:pb-10">
+    <footer className="border-t border-slate-200 bg-slate-100 pb-24 pt-14 text-slate-600 md:pb-10">
       <div className="mx-auto max-w-6xl px-4">
 
         <div className="mb-10 grid grid-cols-1 gap-10 md:grid-cols-4">
