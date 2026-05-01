@@ -39,18 +39,16 @@ export default function Navbar() {
           className={`flex items-center gap-2.5 rounded-full border backdrop-blur-xl transition-all duration-500 ${
             scrolled
               ? 'border-slate-200 bg-white/90 py-2 pl-2 pr-4 shadow-[0_8px_30px_-12px_rgba(15,23,42,0.18)]'
-              : 'border-transparent bg-transparent py-2 pl-2 pr-4'
+              : 'border-white/10 bg-white/5 py-2 pl-2 pr-4'
           }`}
           aria-label="Luminox Glass, ir al inicio"
         >
           <img src={logoLuminox} alt="" className="h-7 w-auto md:h-8" />
           <span
-            className={`font-display text-[13px] font-semibold tracking-tight md:text-sm transition-colors duration-500 ${
-              scrolled ? 'text-slate-900' : 'text-white'
-            }`}
+            className={`font-display text-[13px] font-semibold tracking-tight md:text-sm transition-colors duration-500 ${scrolled ? 'text-slate-900' : 'text-white'}`}
           >
             Luminox
-            <span className={scrolled ? 'text-slate-500' : 'text-white/55'}> Glass</span>
+            <span className={scrolled ? 'text-slate-500' : 'text-white/50'}> Glass</span>
           </span>
         </a>
 
@@ -59,7 +57,7 @@ export default function Navbar() {
           className={`hidden items-center gap-1 rounded-full border backdrop-blur-xl transition-all duration-500 md:flex ${
             scrolled
               ? 'border-slate-200 bg-white/90 px-2 py-1.5 shadow-[0_8px_30px_-12px_rgba(15,23,42,0.18)]'
-              : 'border-white/10 bg-white/[0.05] px-2 py-1.5'
+              : 'border-white/10 bg-white/5 px-2 py-1.5'
           }`}
           aria-label="Principal"
         >
@@ -70,7 +68,7 @@ export default function Navbar() {
               className={`rounded-full px-3.5 py-1.5 text-[13px] font-medium transition-all ${
                 scrolled
                   ? 'text-slate-600 hover:bg-blue-50 hover:text-blue-700'
-                  : 'text-white/75 hover:bg-white/10 hover:text-white'
+                  : 'text-white/70 hover:bg-white/10 hover:text-white'
               }`}
             >
               {item.label}
@@ -94,11 +92,7 @@ export default function Navbar() {
         {/* Mobile burger */}
         <button
           onClick={() => setMobileOpen((v) => !v)}
-          className={`flex h-10 w-10 items-center justify-center rounded-full border backdrop-blur-xl transition-colors md:hidden ${
-            scrolled
-              ? 'border-slate-200 bg-white/90 text-slate-900 hover:bg-white'
-              : 'border-white/10 bg-black/40 text-white hover:bg-black/60'
-          }`}
+          className={`flex h-10 w-10 items-center justify-center rounded-full border backdrop-blur-xl transition-colors md:hidden ${scrolled ? 'border-slate-200 bg-white/90 text-slate-900' : 'border-white/10 bg-white/5 text-white'}`}
           aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={mobileOpen}
         >
